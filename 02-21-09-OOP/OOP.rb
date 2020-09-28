@@ -28,7 +28,7 @@ puts "Hallo Hallo Hallo!".delete('alf')
 puts "Hooooooo".insert(1, "all")
 # getting name
 name = gets
-puts "dein Name ist: #{name}"
+puts "dein Name ist: #{name} !"
 # getting name new
 name = gets.chomp
-puts "dein Name ist: #{name}"
+puts "dein Name ist: #{name} !"
