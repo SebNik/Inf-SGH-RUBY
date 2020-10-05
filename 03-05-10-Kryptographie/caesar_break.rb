@@ -7,15 +7,11 @@ puts text
 26.times do |i|
   chiffre = abc[i..-1] + abc[0, i]
   code = text.tr(abc.downcase+abc.upcase, chiffre.downcase+chiffre.upcase)
-  print "Schlüssel: #{i} Schlüsselbuchstabe: #{abc[i]} Text: #{code}"
+  puts " VERSCHLÜSSLUNG  -  Schlüssel: #{i} Schlüsselbuchstabe: #{abc[i]} Text: #{code}"
 end
 
-chiffre = abc[x..-1] + abc[0, x]
-
-text = text.tr(abc.downcase+abc.upcase, chiffre.downcase+chiffre.upcase)
-print "verschlüsselt: "
-puts text
-
-text = text.tr(chiffre.downcase+chiffre.upcase, abc.downcase+abc.upcase)
-print "entschlüsselt: "
-puts text
+26.times do |i|
+  chiffre = abc[i..-1] + abc[0, i]
+  code = text.tr(chiffre.downcase+chiffre.upcase, abc.downcase+abc.upcase)
+  puts " ENTSCHLÜSSLUNG  -  Schlüssel: #{i} Schlüsselbuchstabe: #{abc[i]} Text: #{code}"
+end
