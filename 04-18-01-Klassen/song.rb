@@ -16,13 +16,3 @@ class Song
         puts "Song: #{@title} (#{@artist})"
     end
 end
-
-
-# Klassendefinition an dieser Stelle ergaenzen
-
-#song = Song.new
-#song.show_infos  # Song: unknown (unknown)
-#
-#song.title  = "Revolution"
-#song.artist = "The Beatles"
-#song.show_infos  # Song: Revolution (The Beatles)
