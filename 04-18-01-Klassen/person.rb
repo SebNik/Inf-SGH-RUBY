@@ -10,6 +10,15 @@ class Person
     end
 end
 
+john_doe = Person.new
+john_doe.greet         # Hello, world!
+puts john_doe.slogan   # Hello
 
-albert = Person.new
-albert.greet         # Hello, world!
+arnold = Person.new
+arnold.slogan = "Hasta la vista"
+
+spock = Person.new
+spock.slogan = "Live long and prosper"
+
+arnold.greet        # Hasta la vista, world!
+spock.greet         # Live long and prosper, world
