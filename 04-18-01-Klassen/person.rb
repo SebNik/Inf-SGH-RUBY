@@ -1,9 +1,12 @@
 class Person
+    attr_accessor :slogan
+
     def initialize
-        puts "I'm a new Person!"
+        @slogan = "Hello"
     end
+
     def greet
-        puts "Hello, world!"
+        puts "#{@slogan}, world!"
     end
 end
 
