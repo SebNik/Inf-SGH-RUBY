@@ -13,7 +13,11 @@ class Dog
     end
 
     def bark(count=2)
-        puts "#{@name}: Woof, " + "woof, " * (count - 2) + "woof!"
+        times = (count - 1)
+        if times<0
+            times=0
+        end
+        puts "#{@name}: Woof" + ", woof" * times + "!"
     end
 
     def info
@@ -26,10 +30,10 @@ class Dog
 
 end
 
-rex = Dog.new("Rex", 20)
+# rex = Dog.new("Rex", 20)
 
-puts rex.info
-rex.bark(4)
-rex.bark
-rex.grow_by(10)
-puts rex.info
+# puts rex.info
+# rex.bark(4)
+# rex.bark
+# rex.grow_by(10)
+# puts rex.info
