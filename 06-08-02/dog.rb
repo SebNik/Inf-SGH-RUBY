@@ -13,11 +13,23 @@ class Dog
     end
 
     def bark(count=2)
+        msg_first = ""
+        msg=""
+        if @size<10
+            msg="yip"
+            msg_first="Yip"         
+        elsif 10<=@size && @size<=20
+            msg="arf"
+            msg_first="Arf"         
+        elsif @size>20
+            msg="woof"
+            msg_first="Woof"                     
+        end
         times = (count - 1)
         if times<0
             times=0
         end
-        puts "#{@name}: Woof" + ", woof" * times + "!"
+        puts "#{@name}: #{msg_first}" + ", #{msg}" * times + "!"
     end
 
     def info
@@ -31,7 +43,7 @@ class Dog
 end
 
 # rex = Dog.new("Rex", 20)
-
+# (kleiner als 10: „yip“; von 10 bis 20: „arf“; größer als 20: „woof“).
 # puts rex.info
 # rex.bark(4)
 # rex.bark
