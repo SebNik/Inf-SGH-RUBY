@@ -3,8 +3,20 @@
 # Copyright (C) 2021 Niklas Abraham
 
 class NameGenerator
-    # Code für `initialize' und `random' hier ergänzen;
-    # nützlich für die Methode `random': Array#sample
+
+    attr_reader :first_names
+    attr_reader :last_names
+
+    def initialize(f, l)
+        @first_names = f
+        @last_names = l
+    end
+
+    def random
+        # this function will return an random name
+        @first_names.sample+" "+@last_names.sample
+    end
+
 end
 
 first_names = ["Big", "Little", "Flying", "Sitting"]
