@@ -5,7 +5,7 @@
 require "minitest/autorun"
 require "minitest/mock"
 
-require_relative "namegenerator"
+require_relative "zufallsnamen"
 
 describe NameGenerator do
 
