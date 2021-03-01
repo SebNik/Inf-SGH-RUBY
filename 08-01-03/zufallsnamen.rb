@@ -7,9 +7,14 @@ class NameGenerator
     attr_reader :first_names
     attr_reader :last_names
 
-    def initialize(f, l)
-        @first_names = f
-        @last_names = l
+    def initialize(f=nil, l=nil)
+        if f==nil && l==nil
+            @first_names = File.readlines("vornamen.txt", chomp: true)
+            @last_names = File.readlines("nachnamen.txt", chomp: true)
+        else
+            @first_names = f
+            @last_names = l
+        end
     end
 
     def random
@@ -37,9 +42,11 @@ class NameGenerator
 
 end
 
-# first_names = ["Big", "Little", "Flying", "Sitting"]
-# last_names  = ["Bull", "Eagle", "Fox", "Horse"]
-# names = NameGenerator.new(first_names, last_names)
+#first_names = ["Big", "Little", "Flying", "Sitting"]
+#last_names  = ["Bull", "Eagle", "Fox", "Horse"]
+#names = NameGenerator.new(first_names, last_names)
+
+# names = NameGenerator.new()
 
 # puts names.random  # => "Sitting Eagle" (eine zufällige Kombination)
 # names.show_all
