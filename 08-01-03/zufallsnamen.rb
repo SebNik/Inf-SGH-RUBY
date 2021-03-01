@@ -28,9 +28,9 @@ class NameGenerator
 
 end
 
-first_names = ["Big", "Little", "Flying", "Sitting"]
-last_names  = ["Bull", "Eagle", "Fox", "Horse"]
-names = NameGenerator.new(first_names, last_names)
+#first_names = ["Big", "Little", "Flying", "Sitting"]
+#last_names  = ["Bull", "Eagle", "Fox", "Horse"]
+#names = NameGenerator.new(first_names, last_names)
 
-puts names.random  # => "Sitting Eagle" (eine zufällige Kombination)
-names.show_all
+#puts names.random  # => "Sitting Eagle" (eine zufällige Kombination)
+#names.show_all
