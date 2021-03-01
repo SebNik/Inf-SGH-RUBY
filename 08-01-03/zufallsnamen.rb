@@ -17,20 +17,29 @@ class NameGenerator
         @first_names.sample+" "+@last_names.sample
     end
 
-    def show_all
-        # this function gives out all the combinations for the names
+
+    def all
+        # this function returns out all the combinations for the names
+        combinations = []
         @first_names.each do |first|
             @last_names.each do |last|
-                puts "#{first} #{last}"
+                combinations << "#{first} #{last}"
             end
         end
+        combinations
+    end
+
+
+    def show_all
+        # this function gives out all the combinations for the names
+        puts self.all()
     end
 
 end
 
-#first_names = ["Big", "Little", "Flying", "Sitting"]
-#last_names  = ["Bull", "Eagle", "Fox", "Horse"]
-#names = NameGenerator.new(first_names, last_names)
+# first_names = ["Big", "Little", "Flying", "Sitting"]
+# last_names  = ["Bull", "Eagle", "Fox", "Horse"]
+# names = NameGenerator.new(first_names, last_names)
 
-#puts names.random  # => "Sitting Eagle" (eine zufällige Kombination)
-#names.show_all
+# puts names.random  # => "Sitting Eagle" (eine zufällige Kombination)
+# names.show_all
