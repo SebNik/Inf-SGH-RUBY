@@ -5,7 +5,7 @@
 # Schreibe das Einstiegsbeispiel mithilfe eines each-Iterators um.
 # Verwende each, um zum Array vegetables von oben ein neues Array sizes zu erzeugen, das die jeweiligen Längen der Elemente enthält.
 
-vegetables = ["potato", "cucumber", "tomato", "bean"]
+vegetables = %w[potato cucumber tomato bean]
 length = []
 
 vegetables.each do |element|
