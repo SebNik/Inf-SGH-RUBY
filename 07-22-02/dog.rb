@@ -3,42 +3,42 @@
 # Copyright (C) 2021 Niklas Abraham
 
 class Dog
-    
-    attr_reader :name
-    attr_accessor :size
 
-    def initialize(n, s)
-        @name = n
-        @size = s
-    end
+  attr_reader :name
+  attr_accessor :size
 
-    def bark(count=2)
-        msg_first = ""
-        msg=""
-        if @size<10
-            msg="yip"
-            msg_first="Yip"         
-        elsif 10<=@size && @size<=20
-            msg="arf"
-            msg_first="Arf"         
-        elsif @size>20
-            msg="woof"
-            msg_first="Woof"                     
-        end
-        times = (count - 1)
-        if times<0
-            times=0
-        end
-        puts "#{@name}: #{msg_first}" + ", #{msg}" * times + "!"
-    end
+  def initialize(n, s)
+    @name = n
+    @size = s
+  end
 
-    def info
-        "name: #{@name}; size: #{@size}"
+  def bark(count = 2)
+    msg_first = ""
+    msg = ""
+    if @size < 10
+      msg = "yip"
+      msg_first = "Yip"
+    elsif 10 <= @size && @size <= 20
+      msg = "arf"
+      msg_first = "Arf"
+    elsif @size > 20
+      msg = "woof"
+      msg_first = "Woof"
     end
+    times = (count - 1)
+    if times < 0
+      times = 0
+    end
+    puts "#{@name}: #{msg_first}" + ", #{msg}" * times + "!"
+  end
 
-    def grow_by(delta)
-        @size += delta
-    end
+  def info
+    "name: #{@name}; size: #{@size}"
+  end
+
+  def grow_by(delta)
+    @size += delta
+  end
 
 end
 
