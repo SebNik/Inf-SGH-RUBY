@@ -9,7 +9,7 @@ vegetables = ["potato", "cucumber", "tomato", "bean"]
 length = []
 
 vegetables.each do |element|
-    puts element
-    length << element.size
+  puts element
+  length << element.size
 end
 puts length

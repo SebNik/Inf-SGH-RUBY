@@ -3,5 +3,5 @@
 vegetables = ["potato", "cucumber", "tomato", "bean"]
 
 vegetables.size.times do |counter|
-    puts vegetables[counter].size
+  puts vegetables[counter].size
 end

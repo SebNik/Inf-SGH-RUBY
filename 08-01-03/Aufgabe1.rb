@@ -4,6 +4,6 @@ vegetables = ["potato", "cucumber", "tomato", "bean"]
 counter = 0
 
 while counter < vegetables.size
-    puts vegetables[counter].size
-    counter+=1
+  puts vegetables[counter].size
+  counter += 1
 end
