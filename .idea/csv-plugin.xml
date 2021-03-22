@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\09-22-03\anagramme.rb">
+          <value>
+            <Attribute>
+              <option name="separator" value="|" />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
