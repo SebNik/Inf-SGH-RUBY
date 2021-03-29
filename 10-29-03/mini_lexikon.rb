@@ -10,15 +10,11 @@ class Lexicon
     filename = 'laender.csv'
     lexicon = {}
     CSV.foreach(filename, headers: true) do |row|
-      # Code,Name,Name (Langform),Hauptstadt,ALPHA-3,TLD,Waehrung,Waehrungscode
-      arr = row # .split(',')
-      c = Country.new(arr[0])
-      c.set_capital(arr[3])
-      c.set_name(arr[1])
-      lexicon[arr[1]] = c
+      c = Country.new(row['Code'])
+      c.set_capital(row['Hauptstadt'])
+      c.set_name(row['Name'])
+      lexicon[row[1]] = c
     end
-    # puts lexicon['Peru'].capital
-    # puts lexicon['Haiti'].capital
     loop do
       input = gets.chomp
       if input == 'quit'
