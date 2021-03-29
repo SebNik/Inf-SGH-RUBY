@@ -3,9 +3,7 @@
 # Copyright (C) 2021 Niklas Abraham
 
 class Country
-  attr_accessor :code
-  attr_accessor :name
-  attr_accessor :capital
+  attr_accessor :code, :name, :capital
 
   def initialize(code)
     @code = code
