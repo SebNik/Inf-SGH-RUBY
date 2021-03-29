@@ -13,8 +13,8 @@ class Lexicon
     lexicon = {}
     CSV.foreach(@file, headers: true) do |row|
       c = Country.new(row['Code'])
-      c.set_capital(row['Hauptstadt'])
-      c.set_name(row['Name'])
+      c.capital_set(row['Hauptstadt'])
+      c.name_set(row['Name'])
       lexicon[row[1]] = c
     end
     lexicon
@@ -39,5 +39,5 @@ class Lexicon
   end
 end
 
-l = Lexicon.new('laender.csv')
-l.run
+lexi = Lexicon.new('laender.csv')
+lexi.run

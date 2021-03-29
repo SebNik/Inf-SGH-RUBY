@@ -9,19 +9,11 @@ class Country
     @code = code
   end
 
-  def set_name(name)
+  def name_set(name)
     @name = name
   end
 
-  def get_name
-    @name
-  end
-
-  def set_capital(capital)
+  def capital_set(capital)
     @capital = capital
-  end
-
-  def get_capital
-    @capital
   end
 end
