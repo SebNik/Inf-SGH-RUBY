@@ -17,18 +17,16 @@ data.each do |row|
   lexicon[arr[1]] = c
 end
 
-puts lexicon["Peru"].capital
-puts lexicon["Haiti"].capital
+puts lexicon['Peru'].capital
+puts lexicon['Haiti'].capital
 
 loop do
   input = gets.chomp
-  if (input == "quit")
+  if input == 'quit'
     break
+  elsif lexicon.keys.include? input
+    puts lexicon[input].capital
   else
-    if (lexicon.keys.include? input)
-      puts lexicon[input].capital
-    else
-      puts 'unbekanntes Land'
-    end
+    puts 'unbekanntes Land'
   end
 end
