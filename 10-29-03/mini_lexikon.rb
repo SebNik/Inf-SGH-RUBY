@@ -4,17 +4,23 @@
 require 'csv'
 require_relative 'Country'
 
-
 class Lexicon
-  def run
-    filename = 'laender.csv'
+  def initialize(file)
+    @file = file
+  end
+
+  def create_data
     lexicon = {}
-    CSV.foreach(filename, headers: true) do |row|
+    CSV.foreach(@file, headers: true) do |row|
       c = Country.new(row['Code'])
       c.set_capital(row['Hauptstadt'])
       c.set_name(row['Name'])
       lexicon[row[1]] = c
     end
+    lexicon
+  end
+
+  def check_input(lexicon)
     loop do
       input = gets.chomp
       if input == 'quit'
@@ -26,7 +32,12 @@ class Lexicon
       end
     end
   end
+
+  def run
+    lexicon = create_data
+    check_input(lexicon)
+  end
 end
 
-l = Lexicon.new
+l = Lexicon.new('laender.csv')
 l.run
