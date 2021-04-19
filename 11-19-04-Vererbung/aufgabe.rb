@@ -1,3 +1,5 @@
+# main file
+# this the main class handling all other classes
 class Animal
 
   attr_accessor :name
@@ -15,38 +17,43 @@ class Animal
   end
 end
 
-class Water_animal < Animal
+# this class handles all animals that swim
+class WaterAnimal < Animal
   def swim
     "#{name}: I am swimming!"
   end
 end
 
-class Air_animal < Land_animal
-  def fly
-    puts "#{name}: I believe I can fly !"
-  end
-end
-
-class Land_animal < Animal
+# all animals that walk on the face of the earth
+class LandAnimal < Animal
   def walk
     "#{name}: I walk."
   end
 end
 
-class Duck < Air_animal
+# handle all animals that can fly, can also all walk
+class AirAnimal < LandAnimal
+  def fly
+    puts "#{name}: I believe I can fly !"
+  end
+end
+
+# the duck animal
+class Duck < AirAnimal
   def sound
     'quak'
   end
 end
 
-class Fish < Water_animal
+# the fish animal
+class Fish < WaterAnimal
   def sound
     'blub'
   end
 end
 
-class Cat < Land_animal
-
+# the cat animal
+class Cat < LandAnimal
   def sound
     'meow'
   end
@@ -56,25 +63,22 @@ class Cat < Land_animal
   end
 end
 
-class Dog < Land_animal
+# the dog animal
+class Dog < LandAnimal
   def sound
     'woof'
   end
 end
 
-cat = Cat.new('Lucky')
-dog = Dog.new('Laika')
+fish = Fish.new('Fish')
 
-duck = Duck.new('Dagobert')
+duck = Duck.new('Duck')
+
 duck.fly
+duck.walk
+duck.talk
 
-fish = Fish.new('nemo')
 fish.swim
+fish.talk
 
-cat.walk   # Lucky: I walk.
-cat.talk   # Lucky: meow, meow.
-cat.sneak  # Lucky: I sneak.
-dog.walk   # Laika: I walk.
-dog.talk   # Laika: woof, woof.
-# dog.sneak  # => NoMethodError: undefined method `sneak' for #<Dog:...>
 
