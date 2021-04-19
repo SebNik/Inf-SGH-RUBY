@@ -31,7 +31,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\10-29-03\Country.rb">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\10-29-03\elemente.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\10-29-03\laender.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
