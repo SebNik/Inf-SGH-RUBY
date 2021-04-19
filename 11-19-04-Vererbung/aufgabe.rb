@@ -43,11 +43,20 @@ class Duck < Animal
   end
 end
 
+class Fish < Animal
+  def swim
+    puts "I am swimming!"
+  end
+end
+
 cat = Cat.new("Lucky")
 dog = Dog.new("Laika")
 
 duck = Duck.new("Dagobert")
-duck
+duck.fly
+
+fish = Fish.new("nemo")
+fish.swim
 
 cat.walk   # Lucky: I walk.
 cat.talk   # Lucky: meow, meow.
