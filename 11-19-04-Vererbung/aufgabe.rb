@@ -13,16 +13,42 @@ class Animal
   def talk
     puts "#{name}: #{sound}, #{sound}."
   end
-
-  # def sound
-  #   "???"
-  # end
 end
 
-class Cat < Animal
+class Water_animal < Animal
+  def swim
+    "#{name}: I am swimming!"
+  end
+end
+
+class Air_animal < Land_animal
+  def fly
+    puts "#{name}: I believe I can fly !"
+  end
+end
+
+class Land_animal < Animal
+  def walk
+    "#{name}: I walk."
+  end
+end
+
+class Duck < Air_animal
+  def sound
+    'quak'
+  end
+end
+
+class Fish < Water_animal
+  def sound
+    'blub'
+  end
+end
+
+class Cat < Land_animal
 
   def sound
-    "meow"
+    'meow'
   end
 
   def sneak
@@ -30,32 +56,19 @@ class Cat < Animal
   end
 end
 
-class Dog < Animal
-
+class Dog < Land_animal
   def sound
-    "woof"
+    'woof'
   end
 end
 
-class Duck < Animal
-  def fly
-    puts "I believe I can fly !"
-  end
-end
+cat = Cat.new('Lucky')
+dog = Dog.new('Laika')
 
-class Fish < Animal
-  def swim
-    puts "I am swimming!"
-  end
-end
-
-cat = Cat.new("Lucky")
-dog = Dog.new("Laika")
-
-duck = Duck.new("Dagobert")
+duck = Duck.new('Dagobert')
 duck.fly
 
-fish = Fish.new("nemo")
+fish = Fish.new('nemo')
 fish.swim
 
 cat.walk   # Lucky: I walk.
