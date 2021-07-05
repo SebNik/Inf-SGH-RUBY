@@ -43,7 +43,7 @@ class NumberList
       unsorted.delete_at(smalles_index)
 
     end
-    sorted
+    NumberList.new(sorted)
   end
 
   def insertion_sort
@@ -68,7 +68,7 @@ class NumberList
       end
 
     end
-    sorted
+    NumberList.new(sorted)
   end
 
   def bubble_sort
@@ -84,7 +84,7 @@ class NumberList
         end
       end
     end
-    array
+    NumberList.new(array)
   end
 
   def quick_sort
@@ -104,25 +104,25 @@ class NumberList
     # building the new array with new quick sort if not size 0 or 1
     if array_greater.size > 1
       gerater = NumberList.new(array_greater)
-      array_greater = gerater.quick_sort
+      array_greater = gerater.quick_sort.to_a
     end
 
     if array_smaller.size > 1
       smaller = NumberList.new(array_smaller)
-      array_smaller = smaller.quick_sort
+      array_smaller = smaller.quick_sort.to_a
     end
 
-    return array_smaller + [] + array_equal + array_greater
+    NumberList.new(array_smaller + [] + array_equal + array_greater)
   end
 end
 
 
-test = NumberList.new()
-test.populate(20)
+# test = NumberList.new()
+# test.populate(20)
 
-puts "Unsorted orginal:   " + test.to_s
-puts "Selections sort:    " + test.selection_sort.join(" ")
-puts "Snsertion sort:     " + test.insertion_sort.join(" ")
-puts "Bubble sort:        " + test.bubble_sort.join(" ")
-puts "Quick sort:         " + test.quick_sort.join(" ")
+# puts "Unsorted orginal:   " + test.to_s
+# puts "Selections sort:    " + test.selection_sort.to_s
+# puts "Snsertion sort:     " + test.insertion_sort.to_s
+# puts "Bubble sort:        " + test.bubble_sort.to_s
+# puts "Quick sort:         " + test.quick_sort.to_s
 
