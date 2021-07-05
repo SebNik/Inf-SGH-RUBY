@@ -46,8 +46,32 @@ class NumberList
     sorted
   end
 
-  # def insertion_sort
-  # end
+  def insertion_sort
+    sorted = []
+    unsorted = @data.dup
+
+    
+
+    while unsorted.size > 0
+      element = unsorted[0]
+      unsorted.delete_at(0)
+      
+      0.upto(sorted.size) do |index|
+        if sorted[index] == nil
+          sorted << element
+          break
+        elsif index == sorted.size
+          sorted.insert(index-1, element)
+          break
+        elsif sorted[index] > element
+          sorted.insert(index, element)
+          break
+        end
+      end
+
+    end
+    sorted
+  end
 
   # def bubble_sort
   # end
@@ -61,4 +85,5 @@ test = NumberList.new()
 test.populate(20)
 
 puts test.to_s
-puts test.selection_sort.join(" ")
+#puts test.selection_sort.join(" ")
+puts test.insertion_sort.join(" ")
