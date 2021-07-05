@@ -95,7 +95,7 @@ end
 test = NumberList.new()
 test.populate(20)
 
-puts test.to_s
-# puts test.selection_sort.join(" ")
-# puts test.insertion_sort.join(" ")
-puts test.bubble_sort.join(" ")
+puts "Unsorted orginal:   " + test.to_s
+puts "Selections sort:    " + test.selection_sort.join(" ")
+puts "Snsertion sort:     " + test.insertion_sort.join(" ")
+puts "Bubble sort:        " + test.bubble_sort.join(" ")
