@@ -50,8 +50,6 @@ class NumberList
     sorted = []
     unsorted = @data.dup
 
-    
-
     while unsorted.size > 0
       element = unsorted[0]
       unsorted.delete_at(0)
@@ -68,13 +66,15 @@ class NumberList
           break
         end
       end
-
+      
     end
     sorted
   end
 
-  # def bubble_sort
-  # end
+  def bubble_sort
+  
+
+  end
 
   # def quick_sort
   # end
@@ -85,5 +85,6 @@ test = NumberList.new()
 test.populate(20)
 
 puts test.to_s
-#puts test.selection_sort.join(" ")
+# puts test.selection_sort.join(" ")
+# puts test.insertion_sort.join(" ")
 puts test.insertion_sort.join(" ")
