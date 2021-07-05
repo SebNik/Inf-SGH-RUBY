@@ -87,8 +87,33 @@ class NumberList
     array
   end
 
-  # def quick_sort
-  # end
+  def quick_sort
+    array = @data.dup
+    # puts "Array: " + array.join(" ")
+
+    # pick random element and index
+    random_index_pivot = rand(array.size - 1)
+    pivot = array[random_index_pivot]
+    # puts "pivot: " + pivot.to_s
+
+    # splitting into to lists
+    array_greater = array.select { |n| n > pivot }
+    array_smaller = array.select { |n| n < pivot }
+    array_equal = array.select { |n| n == pivot }
+
+    # building the new array with new quick sort if not size 0 or 1
+    if array_greater.size > 1
+      gerater = NumberList.new(array_greater)
+      array_greater = gerater.quick_sort
+    end
+
+    if array_smaller.size > 1
+      smaller = NumberList.new(array_smaller)
+      array_smaller = smaller.quick_sort
+    end
+
+    return array_smaller + [] + array_equal + array_greater
+  end
 end
 
 
@@ -99,3 +124,5 @@ puts "Unsorted orginal:   " + test.to_s
 puts "Selections sort:    " + test.selection_sort.join(" ")
 puts "Snsertion sort:     " + test.insertion_sort.join(" ")
 puts "Bubble sort:        " + test.bubble_sort.join(" ")
+puts "Quick sort:         " + test.quick_sort.join(" ")
+
