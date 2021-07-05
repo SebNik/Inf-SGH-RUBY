@@ -66,14 +66,25 @@ class NumberList
           break
         end
       end
-      
+
     end
     sorted
   end
 
   def bubble_sort
-  
+    array = @data.dup
 
+    count_switches = 1
+    while count_switches != 0
+      count_switches = 0
+      0.upto(array.size - 2) do |index|
+        if array[index] > array[index+1]
+          array[index], array[index+1] = array[index+1], array[index]
+          count_switches += 1
+        end
+      end
+    end
+    array
   end
 
   # def quick_sort
@@ -87,4 +98,4 @@ test.populate(20)
 puts test.to_s
 # puts test.selection_sort.join(" ")
 # puts test.insertion_sort.join(" ")
-puts test.insertion_sort.join(" ")
+puts test.bubble_sort.join(" ")
