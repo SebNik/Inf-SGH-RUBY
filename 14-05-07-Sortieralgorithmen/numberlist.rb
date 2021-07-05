@@ -26,15 +26,24 @@ class NumberList
 
   def selection_sort
     sorted = []
+    unsorted = @data.dup
 
-    while @data.size > 0
-      smallest = @data[0]
+    while unsorted.size > 0
+      smallest = unsorted[0]
       smalles_index = 0
 
-      1.upto(@data.size - 1) do |index|
-        
+      1.upto(unsorted.size - 1) do |index|
+        if smallest > unsorted[index]
+          smallest = unsorted[index]
+          smalles_index = index
+        end
       end
+
+      sorted << smallest
+      unsorted.delete_at(smalles_index)
+
     end
+    sorted
   end
 
   # def insertion_sort
