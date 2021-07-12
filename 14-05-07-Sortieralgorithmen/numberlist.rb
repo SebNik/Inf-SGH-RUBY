@@ -113,7 +113,7 @@ class NumberList
       array_smaller = smaller.quick_sort.to_a
     end
 
-    NumberList.new(array_smaller + [] + array_equal + array_greater)
+    NumberList.new(array_smaller + array_equal + array_greater)
   end
 end
 
