@@ -4,8 +4,8 @@ require "csv"
 
 data= []
 
-1.upto(15000) do |n|
-    if n % 1000 == 0
+1.upto(25000) do |n|
+    if n % 500 == 0
         numbers = Array.new(n) { rand(n) }
         list = NumberList.new(numbers)
         puts 
