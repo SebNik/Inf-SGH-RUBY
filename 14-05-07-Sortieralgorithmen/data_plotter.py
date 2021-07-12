@@ -26,16 +26,16 @@ for i in range(0,len(data_formatted)-1, 5):
     data_clear['quick'].append(data_formatted[i+4])
 
 # print(len(data_clear['system']))
-
-time_steps = np.linspace(1000, 15000, num=15)
-# print(time_steps)
+# time_steps = np.arange(1000, 25000, 500)
+time_steps = np.arange(1000, 16000, 1000)
+print(time_steps)
 
 plt.plot(time_steps, data_clear['system'], label='system')
-plt.plot(time_steps, data_clear['selection'], label='selection')
-plt.plot(time_steps, data_clear['insertion'], label='insertion')
-plt.plot(time_steps, data_clear['bubble'], label='bubble')
+#plt.plot(time_steps, data_clear['selection'], label='selection')
+#plt.plot(time_steps, data_clear['insertion'], label='insertion')
+#plt.plot(time_steps, data_clear['bubble'], label='bubble')
 plt.plot(time_steps, data_clear['quick'], label='quick')
 
 
 plt.legend()
-plt.savefig("filename.png", transparent=False)
+plt.savefig("just_quick_system.png", transparent=False)
