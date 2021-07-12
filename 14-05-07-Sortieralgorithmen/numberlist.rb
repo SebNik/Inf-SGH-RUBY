@@ -51,8 +51,9 @@ class NumberList
     unsorted = @data.dup
 
     while unsorted.size > 0
-      element = unsorted[0]
-      unsorted.delete_at(0)
+      element = unsorted.pop()
+      # element = unsorted[0]
+      # unsorted.delete_at(0)
       
       0.upto(sorted.size) do |index|
         if sorted[index] == nil
