@@ -7,9 +7,9 @@ converter = PNMConverter.new
 
 infile = ARGV.shift
 name = File.basename(infile, ".*")
-outfile = "images/#{name}-hflip"
+outfile = "images/#{name}-invert"
 
 image = PNM.read(infile)
-new_image = converter.hflip(image)
+new_image = converter.invert(image)
 new_image.write(outfile, add_extension: true)
 

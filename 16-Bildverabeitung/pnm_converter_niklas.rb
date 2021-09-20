@@ -45,5 +45,23 @@ class PNMConverter
         PNM.create(new_flipped_pixels, type: type, maxgray: maxgray)
     end
 
+    def invert(image)
+        type    = image.type
+        maxgray = image.maxgray
+        pixels  = image.pixels
+
+        new_images = []
+
+        0.upto(pixels.length-1) do |j|
+            new_row = []
+            0.upto(pixels[j].length-1) do |i|
+                new_row << image.maxgray - pixels[j][i]
+            end
+            new_images << new_row
+        end
+
+        PNM.create(new_images, type: type, maxgray: maxgray)
+    end
+
 end
 
