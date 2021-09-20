@@ -5,5 +5,6 @@ new_array = []
 0.upto(array.length-1) do |i|
     new_array << array[i] + 5
 end
-
+ 
+puts rand(100)
 puts new_array
