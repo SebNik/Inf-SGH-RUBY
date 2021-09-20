@@ -7,9 +7,9 @@ converter = PNMConverter.new
 
 infile = ARGV.shift
 name = File.basename(infile, ".*")
-outfile = "images/#{name}-copy"
+outfile = "images/#{name}-vflip"
 
 image = PNM.read(infile)
-new_image = converter.copy(image)
+new_image = converter.vflip(image)
 new_image.write(outfile, add_extension: true)
 
