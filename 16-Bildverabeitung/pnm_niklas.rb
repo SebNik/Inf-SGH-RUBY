@@ -6,7 +6,7 @@ require_relative "pnm_converter_niklas"
 converter = PNMConverter.new
 
 infile = ARGV.shift
-name = File.basename(infile, "images/.*")
+name = File.basename(infile, ".*")
 outfile = "images/#{name}-copy"
 
 image = PNM.read(infile)
