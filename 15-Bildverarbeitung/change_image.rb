@@ -1,6 +1,6 @@
 require "pnm"
 
-image = PNM.read("ziege.pgm")
+image = PNM.read("images/ziege.pgm")
 
 data_original = image.pixels
 puts data_original.class
@@ -23,4 +23,4 @@ end
 
 new_image = PNM.create(new_data, maxgray: 255, comment: "Test")
 
-new_image.write("ziege_cahnged_1.pgm")
+new_image.write("images/ziege_cahnged_1.pgm")
