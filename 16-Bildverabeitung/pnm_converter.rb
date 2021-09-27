@@ -70,12 +70,10 @@ class PNMConverter
 
         new_images = []
 
-        0.upto(pixels.length-1) do |j|
+        0.upto(image.width - 1) do |i|
             new_row = []
-            0.upto(pixels[j].length-1) do |i|
-                0.upto(pixels.length-1) do |a|
-                    new_row << pixels[a][i]
-                end
+            1.upto(pixels.length - 1) do |j|
+                new_row << pixels[pixels.length - j][i]
             end
             new_images << new_row
         end
