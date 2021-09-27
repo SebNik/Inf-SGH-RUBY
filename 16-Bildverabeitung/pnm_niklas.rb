@@ -7,10 +7,10 @@ converter = PNMConverter.new
 
 infile = ARGV.shift
 name = File.basename(infile, ".*")
-outfile = "images/#{name}-rotate"
+outfile = "images/#{name}-invert"
 
 image = PNM.read(infile)
-new_image = converter.rotate(image)
+new_image = converter.invert(image)
 new_image.write(outfile, add_extension: true)
 
 # ruby pnm_niklas.rb images/dog.pbm

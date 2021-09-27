@@ -49,6 +49,7 @@ class PNMConverter
         type    = image.type
         maxgray = image.maxgray
         pixels  = image.pixels
+        puts pixels
 
         new_images = []
 
