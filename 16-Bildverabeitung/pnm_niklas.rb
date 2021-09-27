@@ -1,7 +1,7 @@
 USAGE = "Usage: pnm_niklas.rb file"
 abort USAGE  unless ARGV.size == 1
 
-require_relative "pnm_converter_niklas"
+require_relative "pnm_converter"
 
 converter = PNMConverter.new
 
