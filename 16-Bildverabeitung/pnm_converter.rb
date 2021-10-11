@@ -82,5 +82,44 @@ class PNMConverter
         PNM.create(new_images, type: type, maxgray: maxgray)
     end
 
+    def histogram(image)
+        # this file is outputting and histogram for data analysis
+        type    = image.type
+        maxgray = image.maxgray
+        pixels  = image.pixels
+
+        new_images = []
+        data = {}
+
+        0.upto(maxgray+1) do |z|
+            data[z] = 0
+        end
+
+        0.upto(image.width - 1) do |col|
+            0.upto(image.height-1) do |row|
+                data[pixels[row][col]] += 1
+            end
+        end
+
+        max_v = data.values.max
+
+        0.upto(data.length-1) do |l|
+            new_images << ([maxgray] * (data[l]*100/max_v) + [0] * (100-(data[l]*100/max_v)))
+        end
+
+
+
+        0.upto(new_images.length-2) do |row|
+            new_images[row].insert(0, row)
+        end
+        new_images[256].insert(0, 255)
+
+
+        p new_images
+
+        rotate(rotate(rotate(PNM.create(new_images, type: :pbm, maxgray: maxgray))))
+
+    end
+
 end
 
