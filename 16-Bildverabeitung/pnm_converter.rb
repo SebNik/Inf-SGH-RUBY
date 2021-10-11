@@ -104,20 +104,16 @@ class PNMConverter
         max_v = data.values.max
 
         0.upto(data.length-1) do |l|
-            new_images << ([maxgray] * (data[l]*100/max_v) + [0] * (100-(data[l]*100/max_v)))
+            new_images << ([0] * (data[l]*100/max_v) + [255] * (100-(data[l]*100/max_v)))
         end
 
-
-
-        0.upto(new_images.length-2) do |row|
-            new_images[row].insert(0, row)
+        0.upto(new_images.length-1) do |row|
+            0.upto(10) do |t|
+                new_images[row].insert(0, (row*255/(new_images.length-1)).round)
+            end
         end
-        new_images[256].insert(0, 255)
 
-
-        p new_images
-
-        rotate(rotate(rotate(PNM.create(new_images, type: :pbm, maxgray: maxgray))))
+        rotate(rotate(rotate(PNM.create(new_images, type: type, maxgray: maxgray))))
 
     end
 
