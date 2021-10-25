@@ -150,10 +150,39 @@ class PNMConverter
         m_pixels  = message.pixels
 
         new_images = []
-        
+        new_cover = []
 
-        
-        PNM.create(new_images, type: c_type, maxgray: c_maxgray)
+        0.upto(c_pixels.length-1) do |i|
+            new_row = []
+            0.upto(c_pixels[0].length-1) do |j|
+                if c_pixels[i][j]%10 == 0
+                    new_row << c_pixels[i][j]
+                else
+                    value = (c_pixels[i][j]/10).round*10
+
+                    if value > 250
+                        value = 250
+                    end
+
+                    new_row << value 
+                end
+            end
+            new_cover << new_row
+        end
+
+        0.upto(m_pixels.length-1) do |i|
+            new_row = []
+            0.upto(m_pixels[0].length-1) do |j|
+                if m_pixels[i][j].odd?
+                    new_row << new_cover[i][j] + 1
+                else
+                    new_row << new_cover[i][j]
+                end
+            end
+            new_images << new_row
+        end
+    
+        PNM.create(new_images)
 
     end
 end

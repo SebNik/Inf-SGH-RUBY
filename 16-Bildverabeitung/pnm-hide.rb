@@ -9,7 +9,6 @@ cover_file = ARGV.shift
 image_cover = PNM.read(cover_file)
 
 message = ARGV.shift
-puts message
 image_message = PNM.read(message)
 
 outfile = "images/cover-stego"
