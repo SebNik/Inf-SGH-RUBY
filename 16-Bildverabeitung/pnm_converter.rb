@@ -117,5 +117,27 @@ class PNMConverter
 
     end
 
+    def uncover(image)
+        # this file is outputting and histogram for data analysis
+        type    = image.type
+        maxgray = image.maxgray
+        pixels  = image.pixels
+
+        new_images = []
+
+        0.upto(pixels.length-1) do |i|
+            new_row = []
+            0.upto(pixels[0].length-1) do |j|
+                if pixels[i][j].odd?
+                    new_row << 1
+                else
+                    new_row << 0
+                end
+            end
+            new_images << new_row
+        end
+        puts new_images
+        PNM.create(new_images)
+    end
 end
 
