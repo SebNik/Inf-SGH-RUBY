@@ -136,8 +136,25 @@ class PNMConverter
             end
             new_images << new_row
         end
-        puts new_images
         PNM.create(new_images)
+    end
+
+    def hide(cover, message)
+        # this file is outputting and histogram for data analysis
+        c_type    = cover.type
+        c_maxgray = cover.maxgray
+        c_pixels  = cover.pixels
+
+        m_type    = message.type
+        m_maxgray = message.maxgray
+        m_pixels  = message.pixels
+
+        new_images = []
+        
+
+        
+        PNM.create(new_images, type: c_type, maxgray: c_maxgray)
+
     end
 end
 
